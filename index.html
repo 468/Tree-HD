@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Tree</title>
+	</head>
+	<style>
+
+		body,html {
+		    background-color: snow;
+		    margin:0;
+		}
+
+		#tree{
+			position: absolute;
+			width:100%;
+			text-align: center;
+			border-top:300px solid #fff;
+			z-index: 0;
+
+			margin: 0 auto;
+
+			
+		}
+
+		.grey-header-close{
+			float: right;
+			margin-right: 25px;
+		}
+
+		.grey-header{
+			position:absolute;
+			top:0;
+			left:0;
+			z-index:5;
+			background-color:snow;
+			font-family:Consolas,monaco,monospace;
+			font-size:0.9em;
+			color:#111;
+			width:100%;
+			height:50px;
+			line-height:50px;
+			padding-left:8px;
+		}
+
+		#approved{
+			bottom: 75px;
+			position: absolute;
+			right: 75px;
+			z-index: 5;
+			opacity: 0.85;
+			height: 450px;
+			/* max-height: 400px; */
+		}
+			
+
+		#days-text {
+	
+	    }
+
+		#timeleft-text {
+	
+		}
+				
+		#height-text {
+		
+		}
+
+		#countdown-text{
+			
+		}
+
+		
+
+		#chart-icon{
+		
+		}
+
+		.icon{
+			max-width: 25px;
+			border: 1px solid white;
+			margin-top: 10px;
+		}
+
+		.grey-header-title{
+			position: absolute;
+			margin-left: 8px;
+		}
+
+		#bottom{
+			bottom:0;
+			position:absolute;
+			height:465px;
+			width:66.6666666666%;
+			/*background-color:#7BB97B;*/
+			background-color:#80bc6d;
+			color:white;
+			margin:0;
+		}
+
+		#charts-container{
+	
+			z-index: 5;
+
+			position: absolute;
+			/* bottom: 75px; */
+			/* right: 75px; */
+			/* opacity: 0.85; */
+			/* height: 450px; */
+			z-index: 1000 !important;
+			bottom: 0px;
+			right: 0px;
+			display:block;
+			padding:30px;
+			background-color:#cce4c4;
+		}
+
+		#chart-1-container{
+			margin-left:-15px;
+		}
+
+		#chart-1-canvas{}
+
+		#bottom-text{
+			color: snow;
+			font-size: 20px;
+			font-family: arial;
+			padding:30px;
+			margin-left:30px;
+		}
+
+		#tree-header{
+			font-size:1.5em;
+			margin:26px 0 !important;
+			font-weight:bold;
+		}
+
+		#white-bar{
+			opacity:0.75;
+			max-width:75%;
+		}
+
+	</style>
+
+	<body>
+
+			<!-- resolution: setting this too high impacts framerate !-->
+			<!-- <canvas id="tree" width="720" height="1020"></canvas> !-->
+			<!-- <canvas id="tree" width="720" height="850"></canvas> !-->
+			<!-- <canvas id="tree" width="195" height="243.666666666"></canvas> !-->
+			<!-- <canvas id="tree" width="585" height="731"></canvas> !-->
+			<!-- <canvas id='tree' width='694.6875' height ='743.0625'></canvas> !-->
+			<canvas id="tree" width="555.75" height="594.45"></canvas>
+
+			<div id='charts-container'>
+				<div id='chart-1-container'>
+					<canvas id="chart-1-canvas" height='405' width='340'></canvas>
+				</div>
+
+			</div>
+
+			<div id='bottom'>
+				<div id='bottom-text'>
+					<p id='tree-header'><span id='tree-name-text'>Loading...</span></p>
+					<p><img src='./images/white-bar.png' id='white-bar'/></p>
+					<p><strong>Tree generated:</strong> <span id='tree-generated-text'></span></p>
+					<p><strong>Current session started:</strong> <span id='session-started-text'></span></p>
+					<p><strong>Simulated Days elapsed:</strong> <span id='days-text'></span></p>
+					<p><strong>Simulated Days until growth complete:</strong> <span id='timeleft-text'></span></p>
+					<p><strong>Tree height:</strong> <span id='height-text'></span></p>
+					<p><strong>Seconds until next update:</strong> <span id='countdown-text'>60</span></p>
+				</div>
+			</div>
+		
+	</body>
+
+
+	<script>
+		var timeskip = false;
+		var years_skipped = 0;
+	</script>
+	<script src='./js/Chart.min.js'></script>
+	<script src='./js/three.min.js'></script>
+	<!-- <script src='./js/stats.min.js'></script> !-->
+	<script src='./js/main.js?4'></script>
+
+
+</html>
